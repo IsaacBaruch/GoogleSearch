@@ -1,0 +1,191 @@
+@import './scss/constant.scss';
+
+
+body {
+    margin: 0;
+    font-family: Poppins;
+
+    label,
+    button,
+    input {
+        font-family: Poppins;
+    }
+
+    .flx-col {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .flx-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .clickable {
+        cursor: pointer;
+    }
+    
+    .main-view {
+        align-items: center;
+        gap: 50px;
+        padding: 30px;
+        box-sizing: border-box;
+
+        > .top-header {
+            width: 100%;
+            margin-top: 70px;
+            position: sticky;
+            top: 0;
+            text-align: center;
+            gap: 20px;
+            align-items: center;
+            background: white;
+            padding: 20px;
+
+            > .h {
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+        }
+
+        .auto-complete {
+            width: 560px;
+            border-radius: 20px;
+            position: relative;
+            
+            &:hover,
+            &[data-open="true"] {
+                box-shadow: 0px -2px 12px rgba(5, 61, 61, 0.15), 0px 2px 12px rgba(5, 61, 61, 0.15);
+            }
+
+            &[data-open="true"] {
+
+                input {
+                    border-radius: 20px 20px 0 0;
+                }
+            }
+
+            input {
+                width: 100%;
+                background: #FAFAFC;
+                box-sizing: border-box;
+                border-radius: 20px;
+                padding: 10px 40px;
+                border: 1px solid $lightBorder;
+                
+                &::placeholder {
+                    color: $secondaryText;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            svg.clear {
+                position: absolute;
+                right: 5px;
+                top: 3px;
+                border-radius: 40px;
+                padding: 6px;
+                background: transparent;
+                fill: #70757a;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background: #dad1d1b3;
+                }
+            }
+
+            .recent-list {
+                padding: 10px 0;
+                margin: 0;
+                border: 1px solid $lightBorder;
+                position: absolute;
+                width: 100%;
+                box-sizing: border-box;
+                background-color: white;
+                border-radius: 0 0 20px 20px;
+                box-shadow: 0px 8px 12px rgba(5, 61, 61, 0.15), 0px 2px 12px rgba(5, 61, 61, 0.15);
+
+                > li {
+                    line-height: 28px;
+                    gap: 10px;
+                    align-items: center;
+                    
+                    &:hover {
+                        background-color: $hoverbg;
+                        
+                        :nth-child(3) {
+                            visibility: visible;
+                        }
+                    }
+
+                    &[data-recent="true"] {
+                        color: purple;
+
+                        > .icon {
+                            background-position-y: 40px;
+                        }
+                    }
+
+                    > .icon {
+                        margin-left: 10px;
+                        background: url('https://www.google.co.il/images/searchbox/desktop_searchbox_sprites318_hr.webp');
+                        background-size: 20px;
+                        min-height: 20px;
+                        min-width: 20px;
+                        height: 20px;
+                        width: 20px;
+                    }
+
+                    :nth-child(3) {
+                        margin: 0 10px 0 auto;
+                        visibility: hidden;
+                        color: #80868b;
+                        font-size: 0.85rem;
+                    }
+
+                }
+            }
+        }
+
+        > .no-match-view {
+            gap: 10px;
+
+            > label {
+                &:nth-child(3) {
+                    white-space: break-spaces;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        > ul.result-list {
+            gap: 20px;
+            max-width: 600px;
+
+            > li {
+
+                > h3 {
+                    text-transform: capitalize;
+                }
+                
+                > h3 + label {
+                    overflow: hidden;
+                    // text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                &[data-recent="true"] {
+                    > a {
+                        color: purple;
+                    }
+                }
+            }
+
+        }
+    }
+}

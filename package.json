@@ -1,0 +1,63 @@
+{
+  "name": "google-search",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "rxjs": "^6.6.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "build-dev": "webpack --env.mode dev",
+    "watch-dev": "webpack --watch --env.mode dev ",
+    "build-prod": "webpack --env.mode prod"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.11.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^3.0.2",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8"
+  },
+  "description": "",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaacBaruch/GoogleSearch.git"
+  },
+  "author": "Isaac Baruch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaacBaruch/GoogleSearch/issues"
+  },
+  "homepage": "https://github.com/IsaacBaruch/GoogleSearch#readme"
+}
